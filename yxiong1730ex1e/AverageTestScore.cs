@@ -17,14 +17,14 @@ namespace yxiong1730ex1e
             InitializeComponent();
         }
 
-        private void TxtCalculate_Click(object sender, EventArgs e)
+        private void BtnCalculate_Click(object sender, EventArgs e)
         {
             txtAverageScore.Text =
                 ((Convert.ToDecimal (txtScore1.Text) + Convert.ToDecimal(txtScore2.Text) + Convert.ToDecimal(txtScore3.Text))
                 / 3).ToString("0.00");
         }
 
-        private void TxtClear_Click(object sender, EventArgs e)
+        private void BtnClear_Click(object sender, EventArgs e)
         {
             txtScore1.Text = ("0");
             txtScore2.Text = ("0");
@@ -32,7 +32,7 @@ namespace yxiong1730ex1e
             txtAverageScore.Text = ("");
         }
 
-        private void TxtExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
