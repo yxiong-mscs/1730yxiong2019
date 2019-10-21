@@ -32,7 +32,7 @@
             this.input2TextBox = new System.Windows.Forms.TextBox();
             this.byte1textBox = new System.Windows.Forms.TextBox();
             this.byte2textBox = new System.Windows.Forms.TextBox();
-            this.byte3TextBox = new System.Windows.Forms.TextBox();
+            this.byte3textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.sbyte3textBox = new System.Windows.Forms.TextBox();
@@ -76,6 +76,11 @@
             this.decimal1textBox = new System.Windows.Forms.TextBox();
             this.setMinButton = new System.Windows.Forms.Button();
             this.setMaxButton = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSubract = new System.Windows.Forms.Button();
+            this.btnMultiply = new System.Windows.Forms.Button();
+            this.btnDivide = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // input1TextBox
@@ -86,6 +91,7 @@
             this.input1TextBox.TabIndex = 0;
             this.input1TextBox.Text = "0";
             this.input1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.input1TextBox.TextChanged += new System.EventHandler(this.Input1TextBox_TextChanged);
             // 
             // input2TextBox
             // 
@@ -95,6 +101,7 @@
             this.input2TextBox.TabIndex = 1;
             this.input2TextBox.Text = "0";
             this.input2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.input2TextBox.TextChanged += new System.EventHandler(this.Input2TextBox_TextChanged);
             // 
             // byte1textBox
             // 
@@ -118,16 +125,16 @@
             this.byte2textBox.Text = "0";
             this.byte2textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // byte3TextBox
+            // byte3textBox
             // 
-            this.byte3TextBox.Location = new System.Drawing.Point(645, 105);
-            this.byte3TextBox.Name = "byte3TextBox";
-            this.byte3TextBox.ReadOnly = true;
-            this.byte3TextBox.Size = new System.Drawing.Size(200, 22);
-            this.byte3TextBox.TabIndex = 4;
-            this.byte3TextBox.TabStop = false;
-            this.byte3TextBox.Text = "0";
-            this.byte3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.byte3textBox.Location = new System.Drawing.Point(645, 105);
+            this.byte3textBox.Name = "byte3textBox";
+            this.byte3textBox.ReadOnly = true;
+            this.byte3textBox.Size = new System.Drawing.Size(200, 22);
+            this.byte3textBox.TabIndex = 4;
+            this.byte3textBox.TabStop = false;
+            this.byte3textBox.Text = "0";
+            this.byte3textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -578,11 +585,65 @@
             this.setMaxButton.UseVisualStyleBackColor = true;
             this.setMaxButton.Click += new System.EventHandler(this.SetMaxButton_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(658, 76);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(29, 23);
+            this.btnAdd.TabIndex = 48;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
+            // btnSubract
+            // 
+            this.btnSubract.Location = new System.Drawing.Point(693, 77);
+            this.btnSubract.Name = "btnSubract";
+            this.btnSubract.Size = new System.Drawing.Size(29, 23);
+            this.btnSubract.TabIndex = 49;
+            this.btnSubract.Text = "-";
+            this.btnSubract.UseVisualStyleBackColor = true;
+            this.btnSubract.Click += new System.EventHandler(this.BtnSubract_Click);
+            // 
+            // btnMultiply
+            // 
+            this.btnMultiply.Location = new System.Drawing.Point(728, 77);
+            this.btnMultiply.Name = "btnMultiply";
+            this.btnMultiply.Size = new System.Drawing.Size(29, 23);
+            this.btnMultiply.TabIndex = 50;
+            this.btnMultiply.Text = "*";
+            this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.BtnMultiply_Click);
+            // 
+            // btnDivide
+            // 
+            this.btnDivide.Location = new System.Drawing.Point(763, 77);
+            this.btnDivide.Name = "btnDivide";
+            this.btnDivide.Size = new System.Drawing.Size(29, 23);
+            this.btnDivide.TabIndex = 51;
+            this.btnDivide.Text = "/";
+            this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.BtnDivide_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(700, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 17);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Result";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 534);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btnDivide);
+            this.Controls.Add(this.btnMultiply);
+            this.Controls.Add(this.btnSubract);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.setMaxButton);
             this.Controls.Add(this.setMinButton);
             this.Controls.Add(this.label11);
@@ -626,7 +687,7 @@
             this.Controls.Add(this.sbyte2textBox);
             this.Controls.Add(this.sbyte1textBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.byte3TextBox);
+            this.Controls.Add(this.byte3textBox);
             this.Controls.Add(this.byte2textBox);
             this.Controls.Add(this.byte1textBox);
             this.Controls.Add(this.input2TextBox);
@@ -644,7 +705,7 @@
         private System.Windows.Forms.TextBox input2TextBox;
         private System.Windows.Forms.TextBox byte1textBox;
         private System.Windows.Forms.TextBox byte2textBox;
-        private System.Windows.Forms.TextBox byte3TextBox;
+        private System.Windows.Forms.TextBox byte3textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox sbyte3textBox;
@@ -688,6 +749,11 @@
         private System.Windows.Forms.TextBox decimal1textBox;
         private System.Windows.Forms.Button setMinButton;
         private System.Windows.Forms.Button setMaxButton;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSubract;
+        private System.Windows.Forms.Button btnMultiply;
+        private System.Windows.Forms.Button btnDivide;
+        private System.Windows.Forms.Label label12;
     }
 }
 
