@@ -477,6 +477,7 @@ namespace yxiong1730ex2c
                 decimal3textBox.Text = decimal3.ToString();
             }
             catch (Exception) { decimal3textBox.Text = "error"; }
+
         }
     }
 }
